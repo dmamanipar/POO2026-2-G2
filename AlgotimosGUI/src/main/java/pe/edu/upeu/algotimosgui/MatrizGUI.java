@@ -28,8 +28,12 @@ public class MatrizGUI extends Application {
         Label numI=new Label("Numero de Inicio:");
         Spinner<Integer> spinner2=new Spinner<>(0,60,0);
         Button bt1=new Button("Generar Matriz");
+        bt1.setOnAction(e -> {
+            rellenarMf5(spinner.getValue(),spinner2.getValue());
+        });
+
         HBox hb1=new HBox(10,tam,spinner,numI,spinner2,bt1);
-        rellenarMf5(spinner.getValue(),spinner2.getValue());
+        rellenarMf5(spinner.getValue(),spinner2.getValue());//Agregado
         VBox vb1=new VBox(10,label,hb1, grid);
         ScrollPane sp=new ScrollPane(vb1);
         primaryStage.setScene(new Scene(sp));
