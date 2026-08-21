@@ -27,13 +27,11 @@ public class Producto {
     public Producto(String codigo, String nombre){
         this(codigo, nombre, 0);
     }
-
+    //Metodo, comportamiento, acciones, operaciones
     public double getIgv(){
         if(precio<0){
             throw new IllegalArgumentException();
         }
         return precio*0.18;
     }
-
-
 }
