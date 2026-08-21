@@ -9,6 +9,7 @@ public class Producto {
     int stock;
     double igv;
 
+
     //Constructor y hay mas de un constructor se denomina sobre carga de constructores
     public Producto(){}
     public Producto(String codigo,

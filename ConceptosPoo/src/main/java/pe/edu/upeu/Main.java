@@ -25,5 +25,13 @@ public class Main {
             String pi=px.codigo+"\t"+px.nombre+"\t"+px.precio+"\t"+px.igv;
             System.out.println(pi);
         }
+        Coche cc=new Coche("Toyota", 60);
+        Persona per=new Persona("David");
+        per.conducir(cc);
+        cc.mostrarEstado();
+        cc.acelerar();
+        cc.mostrarEstado();
+        cc.frenar();
+        cc.mostrarEstado();
     }
 }
