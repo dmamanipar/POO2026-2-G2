@@ -6,4 +6,8 @@ public class Loro extends Animal{
     public void sonidoAnimal() {
         System.out.println("Hey como estas...estas entendiendo?");
     }
+
+    public void sonidoAnimal2(){
+        sonidoAnimal();
+    }
 }

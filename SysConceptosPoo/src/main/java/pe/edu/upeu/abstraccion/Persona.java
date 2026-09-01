@@ -22,7 +22,7 @@ public abstract class Persona { //Una clase abstracta no puede ser instanciada p
     //Metodo abstracto cada persona tiene accion diferente
     public abstract void accion();
     //Metodo para mostrar datos...todos los objetos deben tener un metodo mostrar datos
-    public String mostrarDatos(){
+    public  String mostrarDatos(){
         return "Nombre: "+nombre+" Apellido: "+apellido+" DNI: "+dni+" Direccion: "+direccion+" Telefono: "+telefono;
     }
 }
