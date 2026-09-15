@@ -25,16 +25,20 @@ public abstract class CrudGenericoServiceImp<T, ID> implements ICrudGenericoServ
 
     @Override
     public List<T> findAll() {
-        return List.of();
+        return getRepo().findAll();
     }
 
     @Override
     public T findById(ID id) {
-        return null;
+        return getRepo().findById(id).orElseThrow(
+                ()->new ModelNotFoundException("El id no existe:"+id));
     }
 
     @Override
     public void delete(ID id) {
-
+        if(!getRepo().existsById(id)){
+            throw new ModelNotFoundException("Id no existe: "+id);
+        }
+        getRepo().deleteById(id);
     }
 }
