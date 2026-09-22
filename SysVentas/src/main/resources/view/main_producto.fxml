@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.ProductoController">
+<AnchorPane fx:id="miContenedor" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.ProductoController">
    <children>
       <VBox layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
@@ -17,7 +17,7 @@
                      </font>
                   </Label>
                   <Label layoutX="281.0" layoutY="46.0" text="Filtrar Producto" />
-                  <TextField layoutX="281.0" layoutY="63.0" />
+                  <TextField fx:id="txtFiltroDato" layoutX="281.0" layoutY="63.0" />
                   <Button layoutX="450.0" layoutY="63.0" mnemonicParsing="false" text="Buscar" />
                </children>
                <padding>
@@ -53,25 +53,25 @@
                                  <children>
                                     <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Formulario de Registro" GridPane.columnSpan="2147483647" />
                                     <Label text="Tipo Producto" GridPane.rowIndex="1" />
-                                    <ComboBox maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="cbxTipoProducto" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
                                     <Label text="Nombre Producto" GridPane.rowIndex="2" />
-                                    <TextField GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtNombreProducto" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
                                     <Label text="P. Unit" GridPane.rowIndex="3" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtPUnit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                     <Label text="P. Unit Old" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                    <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtPUnitOld" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                                     <Label text="Utilidad" GridPane.rowIndex="4" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="txtUtilidad" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                     <Label text="Stock" GridPane.rowIndex="5" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="txtStock" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                     <Label text="Stock Old" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                                    <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                    <TextField fx:id="txtStockOld" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                                     <Label text="Categoria" GridPane.rowIndex="6" />
-                                    <ComboBox maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
+                                    <ComboBox fx:id="cbxCategoria" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
                                     <Label text="Marca" GridPane.rowIndex="7" />
                                     <Label text="Unidad Medida" GridPane.rowIndex="8" />
-                                    <ComboBox maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="7" />
-                                    <ComboBox maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="8" />
+                                    <ComboBox fx:id="cbxMarca" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="7" />
+                                    <ComboBox fx:id="cbxUnidMedida" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="8" />
                                     <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                        <GridPane.margin>
                                           <Insets right="5.0" />
@@ -80,19 +80,14 @@
                                        <GridPane.margin>
                                           <Insets left="5.0" />
                                        </GridPane.margin></Button>
-                                    <Label maxWidth="1.7976931348623157E308" text="Label" GridPane.columnSpan="2147483647" GridPane.rowIndex="10" />
+                                    <Label fx:id="lbnMsg" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnSpan="2147483647" GridPane.rowIndex="10" />
                                  </children>
                               </GridPane>
                            </children>
                         </AnchorPane>
                         <AnchorPane maxWidth="1.7976931348623157E308">
                            <children>
-                              <TableView layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-                                <columns>
-                                  <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
-                                </columns>
-                              </TableView>
+                              <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                            </children></AnchorPane>
                      </children>
                   </HBox>
