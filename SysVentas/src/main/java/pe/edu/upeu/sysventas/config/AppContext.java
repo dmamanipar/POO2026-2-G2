@@ -49,7 +49,7 @@ public class AppContext {
         registrar(VentaDetalleRepository.class, new VentaDetalleRepository());
         registrar(VentaRepository.class, new VentaRepository());
 
-
+        registrar(ReporteRepository.class, new ReporteRepository());
     }
 
     // CAPA 2 — SERVICIOS
@@ -72,6 +72,8 @@ public class AppContext {
         registrar(IVentaCarritoService.class, new VentaCarritoServiceImp(getBean(VentCarritoRepository.class)));
         registrar(IVentaDetalleService.class, new VentaDetalleServiceImp(getBean(VentaDetalleRepository.class)));
         registrar(IVentaService.class, new VentaServiceImp( getBean(VentaRepository.class), ds));
+
+        registrar(IReporteService.class, new ReporteServiceImp( getBean(ReporteRepository.class)));
 
     }
 
@@ -101,6 +103,7 @@ public class AppContext {
                         getBean(IVentaDetalleService.class),
                         getBean(ConsultaDNI.class)));
 
+        registrar(ReporteController.class, new ReporteController(getBean(IReporteService.class)));
 
     }
 
